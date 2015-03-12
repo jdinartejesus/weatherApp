@@ -1,0 +1,16 @@
+{
+  "name": "",
+  "version": "0.1.0",
+  "description": "",
+  "author": "Dinarte Jesus",
+  "license": "MIT",
+  "devDependencies": {
+    "gulp-browserify": "^0.5.1",
+    "gulp-concat": "^2.5.2",
+    "gulp-plumber": "^1.0.0",
+    "gulp-webserver": "^0.9.0",
+    "react": "^0.13.0",
+    "reactify": "^1.0.0",
+    "require-dir": "^0.1.0"
+  }
+}
