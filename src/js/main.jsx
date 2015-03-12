@@ -1,4 +1,6 @@
+var request = require('superagent')
 var React = require('react');
+
 
 var App = React.createClass({
     getInitialState: function(){
@@ -9,18 +11,19 @@ var App = React.createClass({
     },
     componentDidMount: function(){
       var _this = this;
-      var today = Date.now();
-      var script = document.createElement("script");
-      script.src = "//api.openweathermap.org/data/2.5/weather?q=Paris,fr";
+      var url = "//api.openweathermap.org/data/2.5/weather";
+      var query = {q: "Paris,fr"};
 
-      window[today] = function(jsonData) {
-        _this.setState({
-          temp: jsonData.weather
+      request
+        .get(url)
+        .query(query)
+        .end(function(err, res){
+          if (err) throw err;
+          _this.setState({
+            temp: res.body.weather
+          });
         });
-        delete window[today];
-      };
 
-      document.head.appendChild(script);
     },
     render: function(){
       return(
