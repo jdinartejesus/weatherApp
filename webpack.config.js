@@ -3,7 +3,7 @@ var path = require('path');
 module.exports = {
   context: path.join(__dirname, 'src'),
   entry: {
-    javascript: './app/main.js',
+    javascript: './app/app.jsx',
     html: './index.html'
   },
 
