@@ -24,3 +24,6 @@ build/
 
 # Node modules folder
 node_modules/
+
+# Bower components folder
+bower_components
