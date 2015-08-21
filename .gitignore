@@ -2,7 +2,8 @@
 .AppleDouble
 .LSOverride
 
-# Icon must ends with two.
+# Icon must ends with two
+.
 Icon
 
 # Thumbnails
@@ -26,4 +27,4 @@ build/
 node_modules/
 
 # Bower components folder
-bower_components
+bower_components/
