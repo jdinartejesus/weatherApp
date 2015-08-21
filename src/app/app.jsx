@@ -8,7 +8,7 @@ import React from 'react';
 class App extends React.Component {
   render () {
     return (
-      <div>
+      <div class="content">
         <h2>Hello World</h2>
           <button className="mdl-button mdl-js-button mdl-button--raised">
             Button
