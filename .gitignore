@@ -28,3 +28,6 @@ node_modules/
 
 # Bower components folder
 bower_components/
+
+# JtBrains IDE folder
+.ideia/
