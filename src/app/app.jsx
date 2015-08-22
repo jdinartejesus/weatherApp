@@ -1,5 +1,3 @@
-'use strict';
-
 import 'material.css';
 import 'material';
 
@@ -14,7 +12,7 @@ class App extends React.Component {
             Button
           </button>
       </div>
-    )
+    );
   }
 }
 
