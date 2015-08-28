@@ -1,18 +1,16 @@
 'use strict';
 
 jest.dontMock('../src/app/app.jsx');
+jest.dontMock('../src/app/components/daily/daily.jsx');
+
 
 describe('App', function(){
     var React = require('react/addons');
     var TestUtils = React.addons.TestUtils;
     var App = require('../src/app/app.jsx');
+    var AppComponent;
 
     beforeEach(function () {
-        App = TestUtils.renderIntoDocument(<SelectDate date={new Date()}/>);
+        AppComponent = TestUtils.renderIntoDocument(<App/>);
     });
-
-    it('should exist', function () {
-        expect(TestUtils.isCompositeComponent(App)).toBeTruthy();
-    });
-
 });
