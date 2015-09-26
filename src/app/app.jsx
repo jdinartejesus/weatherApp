@@ -2,27 +2,39 @@ import 'material.css';
 import 'material';
 
 import React from 'react';
-import Daily from './components/daily/daily.jsx';
 import Radium from 'radium';
+import Daily from './components/daily/daily.jsx';
+import DailyStore from './components/daily/dailyStore';
 
-
-class App extends React.Component {
+var App = React.createClass({
+    getInitialState() {
+        return {
+        };
+    },
+    componentWillMount() {
+        console.log('Hello Word');
+    },
+    componentDidMount() {
+        console.log('Good Bye');
+    },
     render () {
         return (
             <div className="mdl-layout mdl-js-layout mdl-grid" style={styles}>
-                <Daily
-                    location="Berlin, Germany"
-                    lastCheck="20:00"
-                    degrees="22"
-                    icon="800"
-                    humidity="60"
-                    wind="4"
-                    pressure="1212"
-                />
+                <section className="section--center mdl-grid mdl-cell--middle">
+                    <Daily
+                        location="Berlin, Germany"
+                        lastCheck="20:00"
+                        degrees="22"
+                        icon="800"
+                        humidity="60"
+                        wind="4"
+                        pressure="1212"
+                    />
+                </section>
             </div>
         );
     }
-}
+});
 
 var styles = {
     width: '100%',
@@ -31,7 +43,7 @@ var styles = {
     backgroundSize: 'cover',
     margin: '0',
     padding: '0'
-}
+};
 
 App = Radium(App);
 
