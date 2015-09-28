@@ -18,6 +18,7 @@
     "events": "^1.0.2",
     "file-loader": "^0.8.4",
     "jest-cli": "^0.5.0",
+    "keymirror": "^0.1.1",
     "object-assign": "^4.0.1",
     "radium": "^0.13.8",
     "react": "^0.13.3",
