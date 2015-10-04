@@ -8,20 +8,20 @@ var CHANGE_EVENT = 'change';
 var _dailyWeather = {};
 
 function loadProductData(data) {
-  _dailyWeather = data[0];
+  _dailyWeather = data;
 }
 
 var DailyStore = assign({}, EventEmitter.prototype, {
-    emitChange: function() {
+    emitChange () {
         this.emit(CHANGE_EVENT);
     },
-    addChangeListener: function(callback) {
+    addChangeListener (callback) {
         this.on(CHANGE_EVENT, callback);
     },
-    removeChangeListener: function(callback) {
+    removeChangeListener (callback) {
         this.removeListener(CHANGE_EVENT, callback);
     },
-    getDailyWeather: function() {
+    getDailyWeather () {
         return _dailyWeather;
     }
 });
