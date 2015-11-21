@@ -1,54 +1,36 @@
 {
-  "name": "weatherapp",
-  "version": "0.1.0",
-  "description": "",
-  "author": "Dinarte Jesus",
-  "license": "MIT",
-  "private": true,
-  "scripts": {
-    "dev": "webpack-dev-server --devtool eval --hot --progress --colors",
-    "deploy": "NODE_ENV=production webpack -p",
-    "test": "jest"
-  },
-  "devDependencies": {
-    "babel-core": "^5.8.22",
-    "babel-jest": "^5.3.0",
-    "babel-loader": "^5.3.2",
-    "css-loader": "^0.16.0",
-    "events": "^1.0.2",
-    "file-loader": "^0.8.4",
-    "jest-cli": "^0.5.0",
-    "keymirror": "^0.1.1",
-    "object-assign": "^4.0.1",
-    "radium": "^0.13.8",
-    "react": "^0.13.3",
-    "style-loader": "^0.12.3",
-    "superagent": "^1.4.0",
-    "url-loader": "^0.5.6",
-    "webpack": "^1.11.0",
-    "webpack-dev-server": "^1.10.1"
-  },
-  "dependencies": {
-    "bower": "^1.4.1",
-    "flux": "^2.1.1"
-  },
-  "jest": {
-    "scriptPreprocessor": "<rootDir>/node_modules/babel-jest",
-    "testDirectoryName": "tests",
-    "unmockedModulePathPatterns": [
-      "./node_modules",
-      "./bower_components"
-    ],
-    "testFileExtensions": [
-      "es6",
-      "js",
-      "jsx"
-    ],
-    "moduleFileExtensions": [
-      "js",
-      "json",
-      "es6",
-      "jsx"
-    ]
-  }
+    "name": "weatherapp",
+    "version": "0.1.0",
+    "description": "",
+    "author": "Dinarte Jesus",
+    "license": "MIT",
+    "private": true,
+    "scripts": {
+        "dev": "webpack-dev-server --devtool eval --hot --progress --colors",
+        "deploy": "NODE_ENV=production webpack -p"
+    },
+    "devDependencies": {
+        "babel-core": "^5.8.22",
+        "babel-jest": "^5.3.0",
+        "babel-loader": "^5.3.2",
+        "css-loader": "^0.16.0",
+        "file-loader": "^0.8.4",
+        "keymirror": "^0.1.1",
+        "lodash": "^3.10.1",
+        "radium": "^0.13.8",
+        "style-loader": "^0.12.3",
+        "superagent": "^1.4.0",
+        "url-loader": "^0.5.6",
+        "webpack": "^1.11.0",
+        "webpack-dev-server": "^1.10.1"
+    },
+    "dependencies": {
+        "bower": "^1.4.1",
+        "history": "^1.13.1",
+        "react": "^0.14.3",
+        "react-dom": "^0.14.3",
+        "react-redux": "^4.0.0",
+        "react-router": "^1.0.0",
+        "redux": "^3.0.4"
+    }
 }

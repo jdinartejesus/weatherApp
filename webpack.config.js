@@ -11,9 +11,9 @@ var config = {
   },
   context: path.join(__dirname, '/src'),
   entry: {
-    javascript: ['webpack/hot/dev-server', './app/app.jsx'],
+    javascript: ['webpack/hot/dev-server', './App.js'],
     html: './index.html',
-    vendors: ['react', 'material', 'material.css', 'weather.icons']
+    vendors: ['material', 'material.css', 'weather.icons']
   },
   resolve: {
     alias: {}
@@ -53,7 +53,7 @@ var config = {
     ]
   }
 };
-config.addVendor('react', bowerDir + '/react/react.min.js');
+
 config.addVendor('material', bowerDir + '/material-design-lite/material.min.js');
 config.addVendor('material.css', bowerDir + '/material-design-lite/material.min.css');
 config.addVendor('weather.icons', bowerDir + '/weather-icons/css/weather-icons.min.css');
