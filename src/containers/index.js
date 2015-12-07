@@ -1,23 +1,35 @@
 import React, {Component} from 'react'
 import {bindActionCreators} from 'redux'
 import { connect } from 'react-redux'
-import Card from '../components/'
+import Card from '../components/Card'
+import Search from '../components/Search'
 import * as appActions from '../actions'
 
+
 class Main extends Component {
-    render() {
+    componentDidMount() {
         const { weatherApp, dispatch } = this.props;
-        const actions = bindActionCreators(appActions, dispatch);
+        dispatch(appActions.fetchLocations('London'))
+    }
+    render() {
+        const { isFetching, isError, isLoaded, weatherApp, dispatch} = this.props;
         console.log(weatherApp);
         return (
-            <Card dailyWeather={weatherApp} />
+            <div className="mdl-layout">
+                <div className="mdl-grid">
+                    <Search searchLocation={location => dispatch(appActions.fetchLocations(location))} />
+                </div>
+                <div className="mdl-grid">
+                    {!isFetching && <Card dailyWeather={weatherApp} /> }
+                </div>
+            </div>
         );
     }
 }
 
 function select(state) {
   return {
-    weatherApp: state.weatherApp
+    weatherApp: state.weather
   }
 }
 
