@@ -13,8 +13,6 @@ export const INVALIDE_DATA = 'INVALIDE_DATA'
  * action creators
  */
 
-const API_URL = 'http://api.openweathermap.org/data/2.5/weather?q=${location}&appid=2de143494c0b295cca9337e1e96b00e0'
-
 export function requestWeather(location) {
     return {
         type: REQUEST_DATA,
@@ -41,7 +39,7 @@ export function receiveWeather(json) {
 export function fetchLocations(location) {
     return dispatch => {
         dispatch(requestWeather(location))
-        return fetch(API_URL)
+        return fetch(`http://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=2de143494c0b295cca9337e1e96b00e0`)
             .then(req => req.json())
             .then(fetchStatus)
             .then(function(data) {
