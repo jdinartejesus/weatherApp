@@ -1,0 +1,12 @@
+#search-box {
+    font-weight: lighter;
+    .mdl-textfield {
+        &__input {
+            color: white;
+            border-color: #fff;
+        }
+        &__label {
+            color: white;
+        }
+    }
+}
