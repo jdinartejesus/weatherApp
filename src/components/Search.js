@@ -1,4 +1,5 @@
 import React, {Component, PropTypes} from 'react';
+import './Search.scss'
 
 export default class Search extends Component {
     handleSubmit(e) {
