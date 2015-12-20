@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import Card from '../components/Card'
 import Search from '../components/Search'
 import * as appActions from '../actions'
-
+import './background-location.scss'
 
 class Main extends Component {
     componentDidMount() {
@@ -15,12 +15,14 @@ class Main extends Component {
         const { isFetching, isError, isLoaded, weatherApp, dispatch} = this.props;
         console.log(weatherApp);
         return (
-            <div className="mdl-layout">
-                <div className="mdl-grid">
-                    <Search searchLocation={location => dispatch(appActions.fetchLocations(location))} />
-                </div>
-                <div className="mdl-grid">
-                    {!isFetching && <Card dailyWeather={weatherApp} /> }
+            <div className="backgound-location">
+                <div className="mdl-layout">
+                    <div className="mdl-grid">
+                        <Search searchLocation={location => dispatch(appActions.fetchLocations(location))} />
+                    </div>
+                    <div className="mdl-grid">
+                        {!isFetching && <Card dailyWeather={weatherApp} /> }
+                    </div>
                 </div>
             </div>
         );
