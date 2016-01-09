@@ -1,12 +1,14 @@
 #search-box {
-    font-weight: lighter;
-    .mdl-textfield {
-        &__input {
-            color: white;
-            border-color: #fff;
-        }
-        &__label {
-            color: white;
-        }
+  font-weight: lighter;
+
+  .mdl-textfield {
+    &__input {
+      border-color: #fff;
+      color: white;
     }
+
+    &__label {
+      color: white;
+    }
+  }
 }
