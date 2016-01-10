@@ -13,8 +13,9 @@ class Main extends Component {
   }
   render () {
     const {isFetching, isError, isLoaded, weatherApp, dispatch} = this.props;
+    var location = weatherApp.background
     return (
-      <div className="backgound-location">
+      <div className="backgound-location" style={{backgroundImage: 'url(' + location + ')'}}>
         <div className="mdl-layout">
           <div className="mdl-grid">
             <Search searchLocation={location => dispatch(appActions.fetchLocations(location))}/>
@@ -29,7 +30,7 @@ class Main extends Component {
 }
 
 function select(state) {
-  return {weatherApp: state.weather}
+  return {weatherApp: state.location }
 }
 
 export default connect(select)(Main);
