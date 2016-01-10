@@ -1,5 +1,3 @@
-'use strict';
-
 jest.dontMock('../src/app/app.jsx');
 jest.dontMock('../src/app/components/daily/daily.jsx');
 

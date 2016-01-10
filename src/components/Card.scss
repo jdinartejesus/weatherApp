@@ -1,0 +1,43 @@
+.card-location {
+  text-align: center;
+
+  &-content {
+    padding-top: .75em;
+    width: 100%;
+
+    &__name {
+      font-size: 2.5em;
+    }
+
+    &__date {
+      display: block;
+      font-size: .40em;
+      line-height: .75em;
+    }
+  }
+
+  &-temp {
+    &__icon {
+      font-size: 5em;
+      padding: .5em 0 .25em;
+    }
+
+    &__description {
+      font-size: 1em;
+      margin: 0;
+      padding-bottom: .75em;
+      text-transform: capitalize;
+    }
+
+    &__value {
+      font-size: 3em;
+      padding-bottom: .5em;
+    }
+  }
+
+  &-weather {
+    border-top: 1px solid #999;
+    margin: auto;
+    width: 90%;
+  }
+}
