@@ -3,15 +3,15 @@ import './Card.scss'
 
 export default class Card extends Component {
   render() {
-    let time = new Date(this.props.dailyWeather.location.date * 1000)
+    let time = new Date(this.props.dailyWeather.data.date * 1000)
     let formatTime = time.getHours() + ':' + time.getMinutes();
     let isDay = this.props.dailyWeather.weather.icon.indexOf('d') !== -1 ? 'day-' : 'night-';
     return (
       <div className="mdl-card card-location mdl-shadow--2dp">
         <div className="card-location-content">
           <h2 className="card-location-content__name">
-            {this.props.dailyWeather.location.city},
-            {this.props.dailyWeather.location.country}
+            {this.props.dailyWeather.data.city},
+            {this.props.dailyWeather.data.country}
             <span className="card-location-content__date">
               Last Updated: {formatTime}
             </span>
