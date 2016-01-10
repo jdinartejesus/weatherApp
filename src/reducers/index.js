@@ -1,13 +1,18 @@
 import {combineReducers} from 'redux'
-import { REQUEST_DATA, RECEIVE_DATA, INVALIDE_DATA} from '../actions'
 
-//TODO: Immutable
+import {
+  REQUEST_DATA,
+  RECEIVE_DATA,
+  INVALIDE_DATA
+} from '../constants/'
+
+
 const initialState = {
   isFetching: false,
   isError: false,
   isLoaded: false,
-  weather: {
-    location: {
+  location: {
+    data: {
       city: '',
       country: '',
       date: ''
@@ -20,9 +25,10 @@ const initialState = {
       humidity: '',
       pressure: '',
       wind: ''
-    }
+    },
+    background: ''
   }
-}
+};
 
 export default function weatherApp(state = initialState, action) {
   switch (action.type) {
@@ -32,13 +38,14 @@ export default function weatherApp(state = initialState, action) {
         isError: false,
         isLoaded: false
       });
+      break;
     case RECEIVE_DATA:
       return Object.assign({}, state, {
         isFetching: false,
         isError: false,
         isLoaded: true,
-        weather: {
-          location: {
+        location: {
+          data: {
             city: action.daily.name,
             country: action.daily.sys.country,
             date: action.daily.dt
@@ -51,10 +58,12 @@ export default function weatherApp(state = initialState, action) {
             humidity: action.daily.main.humidity,
             pressure: action.daily.main.pressure,
             wind: action.daily.wind.speed
-          }
+          },
+          background: 'https://source.unsplash.com/category/buildings/?' + action.daily.name
         },
         lastUpdated: action.receivedAt
       })
+      break;
     case INVALIDE_DATA:
       return Object.assign({}, state, {
         isFetching: false,
@@ -63,6 +72,7 @@ export default function weatherApp(state = initialState, action) {
         error: action.error,
         message: action.message
       });
+      break;
     default:
       return state
   }
