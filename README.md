@@ -1,4 +1,4 @@
-# Weather App [![Build Status](https://travis-ci.org/jdinartejesus/weatherApp.svg?branch=master)](https://travis-ci.org/jdinartejesus/weatherApp)
+# Weather App [![Build Status](https://travis-ci.org/jdinartejesus/weatherApp.svg?branch=develop)](https://travis-ci.org/jdinartejesus/weatherApp)
 
 Simple application for show the weather in the principal cities in the world.
 
