@@ -4,9 +4,11 @@ const APIWeather = 'http://api.openweathermap.org/data/2.5/weather?q='
 // const APIImage = 'https://api.unsplash.com/'
 
 export function fetchLocations(location) {
+  const appID = '44db6a862fba0b067b1930da0d769e98'
+  const units =  'metric'
   return dispatch => {
     dispatch(requestWeather(location))
-    return fetch(APIWeather + location + '&units=metric&appid=2de143494c0b295cca9337e1e96b00e0')
+    return fetch(APIWeather + location + `&units=${units}&appid=${appID}`)
       .then(req => req.json())
       .then(data => {
         if (data.cod == 200 && data.cod < 300) {
