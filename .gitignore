@@ -31,3 +31,6 @@ bower_components/
 
 # JtBrains IDE folder
 .ideia/
+
+# API Secrets
+config.js 
