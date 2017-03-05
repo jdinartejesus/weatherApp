@@ -10,6 +10,6 @@ const createStoreWithMiddleware = applyMiddleware(
   loggerMiddleware // neat middleware that logs actions
 )(createStore)
 
-export default function configureStore(initialState) {
+export default function configureStore (initialState) {
   return createStoreWithMiddleware(weatherApp, initialState)
 }

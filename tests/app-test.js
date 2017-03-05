@@ -1,7 +1,6 @@
 jest.dontMock('../src/app/app.jsx');
 jest.dontMock('../src/app/components/daily/daily.jsx');
 
-
 describe('App', function(){
     var React = require('react/addons');
     var TestUtils = React.addons.TestUtils;

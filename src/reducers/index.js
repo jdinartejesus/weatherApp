@@ -1,11 +1,11 @@
-import {combineReducers} from 'redux'
-
 import {
   REQUEST_DATA,
   RECEIVE_DATA,
-  INVALIDE_DATA
+  INVALIDE_DATA,
+  REQUEST_BACKGROUND,
+  INVALIDE_BACKGROUND,
+  RECEIVE_BACKGROUND
 } from '../constants/'
-
 
 const initialState = {
   isFetching: false,
@@ -26,19 +26,18 @@ const initialState = {
       pressure: '',
       wind: ''
     },
-    background: ''
-  }
-};
+  },
+  background: ''
+}
 
-export default function weatherApp(state = initialState, action) {
+export default function weatherApp (state = initialState, action) {
   switch (action.type) {
     case REQUEST_DATA:
       return Object.assign({}, state, {
         isFetching: true,
         isError: false,
         isLoaded: false
-      });
-      break;
+      })
     case RECEIVE_DATA:
       return Object.assign({}, state, {
         isFetching: false,
@@ -58,12 +57,10 @@ export default function weatherApp(state = initialState, action) {
             humidity: action.daily.main.humidity,
             pressure: action.daily.main.pressure,
             wind: action.daily.wind.speed
-          },
-          background: 'https://source.unsplash.com/category/buildings/?' + action.daily.name
+          }
         },
         lastUpdated: action.receivedAt
       })
-      break;
     case INVALIDE_DATA:
       return Object.assign({}, state, {
         isFetching: false,
@@ -71,8 +68,15 @@ export default function weatherApp(state = initialState, action) {
         isLoaded: true,
         error: action.error,
         message: action.message
-      });
-      break;
+      })
+    case RECEIVE_BACKGROUND:
+      console.log('state ==>', state)
+      let newState = Object.assign({}, state, {
+        background: action.background.urls.regular
+      })
+      console.log('new state ==>', newState)
+      return newState
+
     default:
       return state
   }
