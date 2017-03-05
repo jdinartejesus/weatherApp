@@ -26,6 +26,10 @@ module.exports = {
         }
       },
       {
+        test: /\.(svg|woff|woff2|eot|ttf)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+        loader: 'file-loader?name=assets/fonts/[name].[ext]&publicPath=../../'
+      },
+      {
         test: /\.(scss|css)$/,
         loader: ExtractTextPlugin.extract({
           fallbackLoader: 'style-loader',
