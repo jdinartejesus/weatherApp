@@ -6,6 +6,12 @@ import configureStore from './store/'
 
 let store = configureStore()
 
+import 'weather-icons/css/weather-icons.css'
+
+// Import Material Design Lite
+import 'material-design-lite/material.min.css'
+import 'material-design-lite/material.min.js'
+
 ReactDOM.render(
   <Provider store={store}>
     <App />
