@@ -1,0 +1,8 @@
+/*
+ * Background Action Types
+ */
+
+export const REQUEST_BACKGROUND = 'REQUEST_BACKGROUND'
+export const INVALIDE_BACKGROUND = 'INVALIDE_BACKGROUND'
+export const RECEIVE_BACKGROUND = 'RECEIVE_BACKGROUND'
+
