@@ -1,2 +1,2 @@
-export * from './WeaterActionTypes'
-export * from './BackgroundActionTypes'
+export * from './WeaterActionTypes.js'
+export * from './BackgroundActionTypes.js'

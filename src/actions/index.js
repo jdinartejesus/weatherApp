@@ -1,7 +1,7 @@
 /* global fetch  */
-import { requestWeather, invalidWeather, receiveWeather } from './weatherActions'
-import { requestBackground, invalidBackground, receiveBackground } from './BackgroundActions'
-import { config } from '../../config'
+import { requestWeather, invalidWeather, receiveWeather } from './weatherActions.js'
+import { requestBackground, invalidBackground, receiveBackground } from './BackgroundActions.js'
+import { config } from '../../config.js'
 
 const APIWeather = 'http://api.openweathermap.org'
 const APIUnplash = 'https://api.unsplash.com'
