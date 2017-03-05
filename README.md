@@ -18,6 +18,11 @@ $ cd weatherApp
 $ npm install
 ```
 
+### Add Your API Keys
+- Get your Unsplash API Key
+- Open Weather Map API Key
+- Add to config.js
+
 ### Run Dev Environment
 ```
 $ npm run dev
