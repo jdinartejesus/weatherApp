@@ -1,13 +1,12 @@
 import {REQUEST_DATA, RECEIVE_DATA, INVALIDE_DATA} from '../constants/'
 
-export function requestWeather(location) {
+export function requestWeather () {
   return {
-    type: REQUEST_DATA,
-    location
+    type: REQUEST_DATA
   }
 }
 
-export function invalidWeather(err, msg) {
+export function invalidWeather (err, msg) {
   return {
     type: INVALIDE_DATA,
     error: err,
@@ -15,7 +14,7 @@ export function invalidWeather(err, msg) {
   }
 }
 
-export function receiveWeather(json) {
+export function receiveWeather (json) {
   return {
     type: RECEIVE_DATA,
     daily: json,
