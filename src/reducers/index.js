@@ -25,19 +25,21 @@ const initialState = {
       humidity: '',
       pressure: '',
       wind: ''
-    },
+    }
   },
   background: ''
 }
 
 export default function weatherApp (state = initialState, action) {
   switch (action.type) {
+
     case REQUEST_DATA:
       return Object.assign({}, state, {
         isFetching: true,
         isError: false,
         isLoaded: false
       })
+
     case RECEIVE_DATA:
       return Object.assign({}, state, {
         isFetching: false,
@@ -61,6 +63,7 @@ export default function weatherApp (state = initialState, action) {
         },
         lastUpdated: action.receivedAt
       })
+
     case INVALIDE_DATA:
       return Object.assign({}, state, {
         isFetching: false,
@@ -69,12 +72,13 @@ export default function weatherApp (state = initialState, action) {
         error: action.error,
         message: action.message
       })
+
     case RECEIVE_BACKGROUND:
       console.log('state ==>', state)
       let newState = Object.assign({}, state, {
         background: action.background.urls.regular
       })
-      console.log('new state ==>', newState)
+
       return newState
 
     default:

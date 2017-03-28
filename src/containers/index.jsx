@@ -31,8 +31,12 @@ class App extends Component {
       backgroundUrl
     } = this.props
 
+    console.log('background =>', backgroundUrl)
+    console.log('weatherData =>', weatherData)
+    console.log('isLoaded=>', isLoaded)
+    console.log('isFetching=>', isFetching)
     return (
-      <div className="background" style={{backgroundImage: 'url(' + backgroundUrl + ')'}} >
+      <div className="background" style={{backgroundImage: "url(" + backgroundUrl + ")"}} >
         <div className="mdl-layout">
           <div className="mdl-grid">
             <Search searchLocation={this.dispatchSearchLocation} />
@@ -64,6 +68,11 @@ App.propTypes = {
   isLoaded: bool
 }
 
-const weatherData = (state) => ({weatherData: state.location, backgroundUrl: state.background})
+const weatherData = (state) => ({
+  isFetching: state.isFetching,
+  isLoaded: state.isLoaded,
+  weatherData: state.location,
+  backgroundUrl: state.background
+})
 
 export default connect(weatherData)(App)
