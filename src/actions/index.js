@@ -1,14 +1,14 @@
 /* global fetch  */
-import { requestWeather, invalidWeather, receiveWeather } from './weatherActions.js'
+import { requestWeather, invalidWeather, receiveWeather } from './WeatherActions.js'
 import { requestBackground, invalidBackground, receiveBackground } from './BackgroundActions.js'
-import { config } from '../../config.js'
+import config from '../../configDefault.js'
 
 const APIWeather = 'http://api.openweathermap.org'
 const APIUnplash = 'https://api.unsplash.com'
 
 export function fetchLocations (location) {
   const units = 'metric'
-  const appID = config.API_OPEN_WEATHER_ID
+  const appID = config.API_OPEN_WEATHER_ID || ''
 
   return dispatch => {
     dispatch(requestWeather())
@@ -32,7 +32,7 @@ export function fetchLocations (location) {
 
 export function fetchBackground (location, weather) {
   console.log('fetch Background image')
-  const appID = config.API_UNPLASH_ID
+  const appID = config.API_UNPLASH_ID || ''
 
   return dispatch => {
     dispatch(requestBackground())

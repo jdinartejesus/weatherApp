@@ -31,10 +31,6 @@ class App extends Component {
       backgroundUrl
     } = this.props
 
-    console.log('background =>', backgroundUrl)
-    console.log('weatherData =>', weatherData)
-    console.log('isLoaded=>', isLoaded)
-    console.log('isFetching=>', isFetching)
     return (
       <div className="background" style={{backgroundImage: "url(" + backgroundUrl + ")"}} >
         <div className="mdl-layout">
